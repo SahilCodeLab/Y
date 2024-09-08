@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i am sahil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
+            background-size: cover;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 20px;
+            border: 2px solid #d4af37; /* Gold border for Islamic theme */
+        }
+
+        .intro {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #004d40; /* Dark green */
+            border-bottom: 2px solid #d4af37; /* Gold underline */
+            padding-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        .slidein {
+            display: inline-block;
+            font-size: 28px;
+            color: #004d40;
+            font-weight: bold;
+            animation: slidein 4s ease-out;
+        }
+
+        @keyframes slidein {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 2px solid #004d40;
+            border-radius: 8px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .qr-code:hover {
+            transform: scale(1.1);
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #004d40; /* Dark green */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background-color: #d4af37; /* Gold */
+            transform: scale(1.05);
+        }
+
+        .details {
+            margin-top: 20px;
+            text-align: left;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .details h2 {
+            font-size: 20px;
+            color: #004d40;
+            margin-bottom: 10px;
+        }
+
+        .details p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .details ul {
+            list-style-type: disc;
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .details ul li {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #444;
+        }
+
+        .details a {
+            color: #004d40;
+            text-decoration: none;
+        }
+
+        .details a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .intro {
+                font-size: 20px;
+            }
+
+            .qr-code {
+                width: 150px;
+                height: 150px;
+            }
+
+            .button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .details h2 {
+                font-size: 18px;
+            }
+
+            .details p,
+            .details ul li {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .intro {
+                font-size: 16px;
+            }
+
+            .qr-code {
+                width: 120px;
+                height: 120px;
+            }
+
+            .button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .details h2 {
+                font-size: 16px;
+            }
+
+            .details p,
+            .details ul li {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="intro">
+            <div class="slidein">I am Sahil</div>
+        </div>
+        <h1>Scan the QR Code Below</h1>
+        <a href="https://waqf.pages.dev/" target="_blank">
+            <img src="qr-code.jpg" alt="QR Code" class="qr-code">
+        </a>
+        
+        <div class="button-container">
+            <a href="https://waqf.pages.dev/" class="button" target="_blank">Click Here to Visit</a>
+        </div>
+        
+        <div class="details">
+            <h2>Details about the QR Code:</h2>
+            <p>If you want this bill not to be passed, then scan the QR code below with your Google or Chrome app. Click on the Gmail Email option, write your name, and send it. Even if 50 lakh people do this, the government will not be able to get this bill passed!</p>
+            <p><strong>Share:</strong> Please share this with your family and friends.</p>
+            <ul>
+                <li>Link: <a href="https://aimplb.org/"  target="_blank"<span style="color: green;">All India Muslim Personal Law Board</a></li>
+                <li>Scan with any QR code scanner.</li>
+                <li>Accessible on both Android and iOS devices.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+  
