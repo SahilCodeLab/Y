@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I am Sahil</title>
+    <meta name="description" content="Vote to urge the UN to protect Indian Muslims from attacks.">
+    <meta name="keywords" content="UN Petition, Indian Muslims, Stop Attacks, Protect Rights">
+    <meta name="author" content="Sahil">
+    <title>UN Petition: Protect Indian Muslims</title>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-082GMKNTCJ"></script>
@@ -13,7 +16,13 @@
       gtag('js', new Date());
       gtag('config', 'G-082GMKNTCJ');
     </script>
-    
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts: Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -21,211 +30,379 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+            position: fixed; /* Lock viewport */
+            width: 100%;
+        }
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f4f8;
-            font-family: 'Arial', sans-serif;
-            background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
+            min-height: 100vh;
+            background-color: #1a3a5f; /* UN Blue */
+            background-image: 
+                linear-gradient(rgba(26, 58, 95, 0.9), rgba(26, 58, 95, 0.9)),
+                url('https://images.unsplash.com/photo-1589321596285-0c296d3a7de8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Roboto', sans-serif;
+            padding: 15px;
         }
 
         .container {
             text-align: center;
-            padding: 20px;
-            background-color: #ffffff;
+            padding: 25px 20px;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
-            margin: 20px;
-            border: 2px solid #d4af37; /* Gold border for Islamic theme */
-        }
-
-        .intro {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #004d40; /* Dark green */
-            border-bottom: 2px solid #d4af37; /* Gold underline */
-            padding-bottom: 10px;
-            position: relative;
-            display: inline-block;
-            font-family: 'Georgia', serif;
-            overflow: hidden;
-            white-space: nowrap;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
             width: 100%;
+            max-width: 360px;
+            max-height: 95vh; /* Prevent container from being too tall */
+            border: 1px solid #e0e0e0;
+            animation: fadeInUp 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Better content distribution */
         }
 
-        .slidein {
-            display: inline-block;
-            font-size: 28px;
-            color: #004d40;
-            font-weight: bold;
-            animation: slidein 4s ease-out;
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a3a5f, #4a90e2, #1a3a5f);
         }
 
-        @keyframes slidein {
+        @keyframes fadeInUp {
             from {
-                transform: translateX(-100%);
                 opacity: 0;
+                transform: translateY(20px);
             }
             to {
-                transform: translateX(0);
                 opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        .qr-code {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border: 2px solid #004d40;
-            border-radius: 8px;
-            transition: transform 0.2s;
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 0; /* Important for flex children */
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            background: #1a3a5f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .qr-code:hover {
-            transform: scale(1.1);
+        .intro {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1a3a5f;
+            margin-bottom: 10px;
+            line-height: 1.3;
         }
 
-        .button-container {
-            margin-top: 20px;
+        h1 {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .qr-container {
+            margin: 15px auto;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            transition: transform 0.3s;
+        }
+
+        .qr-code:hover {
+            transform: scale(1.03);
         }
 
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 12px 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
             color: white;
-            background-color: #004d40; /* Dark green */
+            background: #1a3a5f;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             text-decoration: none;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: all 0.3s;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(26, 58, 95, 0.3);
+            letter-spacing: 0.5px;
         }
 
         .button:hover {
-            background-color: #d4af37; /* Gold */
-            transform: scale(1.05);
+            background: #2a4a6f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(26, 58, 95, 0.4);
         }
 
         .details {
-            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 15px;
             text-align: left;
-            max-width: 500px;
-            margin: 20px auto;
-        }
-
-        .details h2 {
-            font-size: 20px;
-            color: #004d40;
-            margin-bottom: 10px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #4a90e2;
         }
 
         .details p {
-            font-size: 16px;
-            color: #666;
+            margin: 8px 0;
+            line-height: 1.5;
         }
 
-        .details ul {
-            list-style-type: disc;
-            margin-top: 10px;
-            padding-left: 20px;
+        .details p:first-child {
+            font-weight: 600;
+            color: #1a3a5f;
+            margin-bottom: 12px;
+            text-align: center;
         }
 
-        .details ul li {
-            font-size: 16px;
-            margin: 5px 0;
-            color: #444;
+        .share-buttons {
+            margin: 15px 0 10px;
         }
 
-        .details a {
-            color: #004d40;
+        .share-buttons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: 0 8px;
+            font-size: 1.2rem;
+            color: white;
+            background: #1a3a5f;
+            border-radius: 50%;
+            transition: all 0.3s;
             text-decoration: none;
         }
 
-        .details a:hover {
-            text-decoration: underline;
+        .share-buttons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .intro {
-                font-size: 20px;
-            }
-
-            .qr-code {
-                width: 150px;
-                height: 150px;
-            }
-
-            .button {
-                padding: 8px 16px;
-                font-size: 14px;
-            }
-
-            .details h2 {
-                font-size: 18px;
-            }
-
-            .details p,
-            .details ul li {
-                font-size: 14px;
-            }
+        .share-buttons a:nth-child(1) {
+            background: #25D366; /* WhatsApp green */
         }
 
+        .share-buttons a:nth-child(2) {
+            background: #1DA1F2; /* Twitter blue */
+        }
+
+        .footer {
+            font-size: 0.7rem;
+            color: #999;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Responsive Styles for Phones */
         @media (max-width: 480px) {
-            .intro {
-                font-size: 16px;
+            body {
+                padding: 10px;
             }
+            
+            .container {
+                padding: 20px 15px;
+                max-width: 320px;
+            }
+            
+            .intro {
+                font-size: 1.2rem;
+            }
+            
+            h1 {
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+            
+            .qr-code {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .details {
+                font-size: 0.8rem;
+                padding: 12px;
+            }
+            
+            .footer {
+                font-size: 0.65rem;
+            }
+        }
 
+        @media (max-width: 360px) {
+            .container {
+                padding: 18px 12px;
+                max-width: 300px;
+            }
+            
+            .logo {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+            
+            .intro {
+                font-size: 1.1rem;
+            }
+            
+            h1 {
+                font-size: 0.9rem;
+            }
+            
             .qr-code {
                 width: 120px;
                 height: 120px;
             }
+            
+            .details {
+                font-size: 0.75rem;
+                margin-top: 12px;
+            }
+            
+            .footer {
+                font-size: 0.6rem;
+            }
+        }
 
+        @media (max-height: 700px) {
+            .container {
+                padding: 15px 12px;
+                max-height: 98vh;
+            }
+            
+            .logo {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            
+            .intro {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+            
+            h1 {
+                font-size: 0.9rem;
+                margin-bottom: 12px;
+            }
+            
+            .qr-container {
+                margin: 10px auto;
+            }
+            
+            .qr-code {
+                width: 120px;
+                height: 120px;
+            }
+            
             .button {
-                padding: 6px 12px;
-                font-size: 12px;
+                padding: 10px 18px;
+                font-size: 0.85rem;
+                margin: 8px 0;
             }
-
-            .details h2 {
-                font-size: 16px;
+            
+            .details {
+                margin-top: 10px;
+                padding: 10px;
+                font-size: 0.75rem;
             }
-
-            .details p,
-            .details ul li {
-                font-size: 12px;
+            
+            .share-buttons {
+                margin: 12px 0 8px;
+            }
+            
+            .footer {
+                margin-top: 8px;
+                font-size: 0.6rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="intro">
-            <div class="slidein">I am Sahil</div>
-        </div>
-        <h1>Scan the QR Code Below</h1>
-        <a href="https://waqf.pages.dev/" target="_blank">
-            <img src="qr-coder.jpg" alt="QR Code" class="qr-code">
-        </a>
-        
-        <div class="button-container">
-            <a href="https://waqfbill2024.com/" class="button" target="_blank">Click Here to Visit</a>
-        </div>
-        
-        <div class="details">
-            <h2>Details about the QR Code:</h2>
-            <p>If you want this bill not to be passed, then scan the QR code below with your Google or Chrome app. Click on the Gmail Email option, write your name, and send it. Even if 50 lakh people do this, the government will not be able to get this bill passed!</p>
-            <p><strong>Share:</strong> Please share this with your family and friends.</p>
-            <ul>
-                <li>Link: <a href="https://aimplb.org/"  target="_blank"<span style="color: green;">All India Muslim Personal Law Board</a></li>
-                <li>Scan with any QR code scanner.</li>
-                <li>Accessible on both Android and iOS devices.</li>
-            </ul>
+        <div class="content">
+            <div class="logo">
+                <i class="fas fa-handshake"></i>
+            </div>
+            <div class="intro">UN Petition: Protect Indian Muslims</div>
+            <h1>Scan the QR code to show your support</h1>
+            
+            <div class="qr-container">
+                <a href="https://chng.it/cKKrczDGhL" target="_blank" aria-label="Scan QR code to vote for UN petition">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://chng.it/cKKrczDGhL" alt="QR Code to Vote for UN Petition" class="qr-code">
+                </a>
+            </div>
+            
+            <a href="https://chng.it/cKKrczDGhL" class="button" target="_blank">Vote Now</a>
+
+            <div class="details">
+                <p>How to support this petition:</p>
+                <p><i class="fas fa-check" style="color: #4a90e2; margin-right: 5px;"></i> Scan the QR code or click "Vote Now"</p>
+                <p><i class="fas fa-check" style="color: #4a90e2; margin-right: 5px;"></i> Add your name to show support</p>
+                <p><i class="fas fa-check" style="color: #4a90e2; margin-right: 5px;"></i> Share with your network</p>
+            </div>
+
+            <div class="share-buttons">
+                <a href="https://api.whatsapp.com/send?text=Vote%20to%20protect%20Indian%20Muslims%20from%20attacks!%20Join%20UN%20petition:%20https://chng.it/cKKrczDGhL" target="_blank" aria-label="Share on WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://twitter.com/intent/tweet?text=Stop%20attacks%20on%20Indian%20Muslims!%20Vote%20for%20UN%20action:%20https://chng.it/cKKrczDGhL" target="_blank" aria-label="Share on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            
+            <div class="footer">
+                This petition urges the UN to take action against attacks on Indian Muslims.
+            </div>
         </div>
     </div>
 </body>
